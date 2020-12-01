@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ex-dischi-musicali</title>
+
+        <!-- Vue 2.x (CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+        <!-- Axios -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <img src="logo.png" alt="logo" />
+            </div>
+        </header>
+
+        <div id="root" >
+          <div class="container select-container">
+            <select
+                class=""
+                name=""
+                v-model="userGenre">
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="metal">Metal</option>
+              <option value="jazz">Jazz</option>
+            </select>
+          </div>
+
+          <div class="cds-container container">
+            <!-- Records List (Vue Data) -->
+            <div
+              class="cd"
+              v-for="(record, index) in genreSelection">
+                <img
+                  :src="record.poster" alt="">
+                <h3>{{record.title}}</h3>
+                <span class="author">{{record.author}}</span>
+                <span class="year">{{record.year}}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
